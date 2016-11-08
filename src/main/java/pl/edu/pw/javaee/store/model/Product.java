@@ -1,14 +1,15 @@
 package pl.edu.pw.javaee.store.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.web.multipart.MultipartFile;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.math.BigDecimal;
+import javax.persistence.*;
+import javax.validation.constraints.Min;
+import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by Kara on 2016-10-15.
@@ -16,15 +17,28 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @Entity
-public class Product {
+public class Product implements Serializable{
+
+    private static final long serialVersionUID = 6206417089308276694L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String productId;
+    @NotEmpty (message = "Podaj nazwę produktu")
     private String productName;
+    @Min(value = 0, message = "Cena produktu nie może być mniejsza niż zero")
     private double productPrice;
     private String productDescription;
     private String productManufacturer;
     private String productCategory;
+    @Min(value = 0, message = "Liczba sztuk produktu nie może być mniejsza niż zero")
     private int unitsInStock;
+
+    @Transient
+    private MultipartFile productImage;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
+    private List<CartItem> cartItemList;
+
 
 }
