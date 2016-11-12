@@ -25,4 +25,14 @@
         </h3>
 
         <p>Tutaj możesz dodawać, usuwać i edytować produkty</p>
+
+
+
+
+        <h3>
+            <a href="<c:url value="/admin/customer" />" >Zarządzanie klientami</a>
+        </h3>
+
+        <p>Możesz tu zobaczyć informacje o klientach.</p>
+
 <%@include file="/WEB-INF/views/template/footer.jsp"%>

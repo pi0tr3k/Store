@@ -25,7 +25,6 @@ public class ShippingAddress implements Serializable{
     private String streetName;
     private String apartmentNumber;
     private String city;
-    private String state;
     private String country;
     private String zipCode;
 
@@ -38,7 +37,6 @@ public class ShippingAddress implements Serializable{
                 "streetName='" + streetName + '\'' +
                 ", apartmentNumber='" + apartmentNumber + '\'' +
                 ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
                 ", country='" + country + '\'' +
                 ", zipCode='" + zipCode + '\'' +
                 '}';

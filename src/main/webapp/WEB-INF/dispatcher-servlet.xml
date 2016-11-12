@@ -13,8 +13,14 @@
 		http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 
-    <mvc:annotation-driven />
+
     <context:component-scan base-package="pl.edu.pw.javaee.store" />
+
+    <mvc:annotation-driven>
+        <mvc:argument-resolvers>
+            <bean class="org.springframework.security.web.bind.support.AuthenticationPrincipalArgumentResolver" />
+        </mvc:argument-resolvers>
+    </mvc:annotation-driven>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/" />

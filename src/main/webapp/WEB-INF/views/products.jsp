@@ -36,7 +36,7 @@
                <td>${product.productManufacturer}</td>
                <td>${product.unitsInStock}</td>
                <td>${product.productPrice} PLN</td>
-               <td><a href="<spring:url value="/productList/viewProduct/${product.productId}" />">
+               <td><a href="<spring:url value="/product/viewProduct/${product.productId}" />">
                    <span class="glyphicon glyphicon-info-sign"></span> </a> </td>
            </tr>
 

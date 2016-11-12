@@ -34,6 +34,6 @@ public class CustomerOrder implements Serializable {
 
     @OneToOne
     @JoinColumn(name = "shippingAddressId")
-    private ShippingAddress shppingAddress;
+    private ShippingAddress shippingAddress;
 
 }

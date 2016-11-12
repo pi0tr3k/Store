@@ -6,6 +6,7 @@ import lombok.Setter;
 import javax.annotation.Generated;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
@@ -17,8 +18,9 @@ import javax.persistence.Id;
 public class Users {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private int userId;
+
     private String username;
     private String password;
     private boolean enabled;
