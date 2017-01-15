@@ -15,14 +15,13 @@
             <div class="jumbotron">
                 <div class="container">
                     <h1>Dziękujemy za złożenie zamówienia!</h1>
-                    <p>Twoje zamówienie zostanie dostarczone w ciągu dwóch dni roboczych</p>
                 </div>
             </div>
         </section>
 
         <section class="container" >
             <p>
-                <a href="<spring:url value="/" />" class="btn btn-default">OK</a>
+                <a href="<spring:url value="/" />" class="btn btn-info">Powrót do strony głównej</a>
             </p>
         </section>
 

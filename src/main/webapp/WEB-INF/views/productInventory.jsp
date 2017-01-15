@@ -2,18 +2,17 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%@include file="/WEB-INF/views/template/header.jsp"%>
-<!-- Marketing messaging and featurettes
-================================================== -->
-<!-- Wrap the rest of the page in another container to center all the content. -->
 
 <div class="container wrapper">
 
-    <div class="container">
-        <div class="page-header">
-            <h1>Asortyment</h1>
-            <p class="lead">Asortyment sklepu</p>
-
-        </div>
+    <div class="container-fluid">
+        <section>
+            <div class="jumbotron">
+                <div class="container">
+                    <h1>Asortyment</h1>
+                </div>
+            </div>
+        </section>
 
         <table class="table table-striped table-hover">
             <tr class="success">
@@ -21,7 +20,7 @@
                 <th>Nazwa produktu</th>
                 <th>Kategoria</th>
                 <th>Producent</th>
-                <th>Sztuk w magazynie</th>
+                <th>Sztuk</th>
                 <th>Cena</th>
                 <th></th>
             </tr>
@@ -48,6 +47,6 @@
             </c:forEach>
 
         </table>
-        <a href="<spring:url value="/admin/product/addProduct"/>" class="btn btn-primary">Dodaj produkt</a>
+        <a href="<spring:url value="/admin/product/addProduct"/>" class="btn btn-success">Dodaj produkt</a>
 
 <%@include file="/WEB-INF/views/template/footer.jsp"%>

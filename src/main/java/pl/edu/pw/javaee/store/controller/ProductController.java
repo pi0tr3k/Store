@@ -21,16 +21,32 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
-    @RequestMapping("/productList")
-        public String getProducts(Model model) {
-        List<Product> products = productService.getProductList();
+    @RequestMapping("/productList/tennis")
+    public String getTennisProducts(Model model) {
+        List<Product> products = productService.getTennisProducts();
         model.addAttribute("products", products);
 
-        return "products";
+        return "productsTennis";
+    }
+
+    @RequestMapping("/productList/clothes")
+    public String getClothesProducts(Model model) {
+        List<Product> products = productService.getClothesProducts();
+        model.addAttribute("products", products);
+
+        return "productsClothes";
+    }
+
+    @RequestMapping("/productList/tableTennis")
+    public String getTableTennisProducts(Model model) {
+        List<Product> products = productService.getTableTennisProducts();
+        model.addAttribute("products", products);
+
+        return "productsTableTennis";
     }
 
     @RequestMapping("/viewProduct/{id}")
-    public String viewProduct(@PathVariable int id, Model model) throws IOException {
+    public String viewProduct(@PathVariable long id, Model model) throws IOException {
         Product product = productService.getProductById(id);
         model.addAttribute("product", product);
 

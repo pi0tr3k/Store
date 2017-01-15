@@ -1,38 +1,34 @@
 <%@include file="/WEB-INF/views/template/header.jsp"%>
 <%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
-<!-- Marketing messaging and featurettes
-================================================== -->
-<!-- Wrap the rest of the page in another container to center all the content. -->
 
 <div class="container wrapper">
 
     <div class="container">
-        <div class="page-header">
-            <h1>Panel administracyjny</h1>
-            <p class="lead">To jest panel administracyjny</p>
+        <section>
+            <div class="jumbotron">
+                <div class="container">
+                    <h1>Panel administracyjny</h1>
+                </div>
+            </div>
+        </section>
 
-        </div>
+        <a href="<c:url value="/admin/productInventory" />" class="btn btn-info">
 
-        <c:if test="${pageContext.request.userPrincipal.name != null}">
-            <h2>
-                Witaj: ${pageContext.request.userPrincipal.name} | <a href="<c:url
-                value="/j_spring_security_logout" />">Wyloguj</a>
-            </h2>
-        </c:if>
-
-        <h3>
-            <a href="<c:url value="/admin/productInventory" />" >Asortyment</a>
-        </h3>
-
-        <p>Tutaj możesz dodawać, usuwać i edytować produkty</p>
+            <h3>Asortyment</h3>
+            <p>Dodawanie, usuwanie i edytowanie produktów</p>
+        </a>
 
 
+        <a href="<c:url value="/admin/customer" />" class="btn btn-success" >
+            <h3>Zarządzanie klientami</h3>
 
+            <p>Informacje o klientach</p>
+        </a>
 
-        <h3>
-            <a href="<c:url value="/admin/customer" />" >Zarządzanie klientami</a>
-        </h3>
+        <a href="<c:url value="/admin/order" />" class="btn btn-warning" >
+            <h3>Zarządzanie zamówieniami</h3>
 
-        <p>Możesz tu zobaczyć informacje o klientach.</p>
+            <p>Lista zamówień, szczegóły, potwierdzanie opłacenia i wysyłki</p>
+        </a>
 
 <%@include file="/WEB-INF/views/template/footer.jsp"%>

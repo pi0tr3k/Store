@@ -8,10 +8,15 @@
 <div class="container wrapper">
 
     <div class="container">
-        <div class="page-header">
-            <h1>Rejestracja</h1>
-            <p class="lead">Wypełnij poniższe pola</p>
-        </div>
+        <section>
+            <div class="jumbotron">
+                <div class="container">
+                    <h1>Rejestracja</h1>
+                </div>
+            </div>
+        </section>
+
+        <div class="collectInfoForm">
 
         <form:form action="${pageContext.request.contextPath}/register" method="post"
                    commandName="customer">
@@ -19,12 +24,12 @@
         <h3>Podstawowe informacje</h3>
 
         <div class="form-group">
-            <label for="name">Imię i nazwisko</label><form:errors path="customerName" cssStyle="color: red" />
+            <label for="name">Imię i nazwisko </label><form:errors path="customerName" cssStyle="color: red" />
             <form:input path="customerName" id="name" class="form-Control" />
         </div>
 
         <div class="form-group">
-            <label for="email">E-mail</label><span style="color: red">${emailMsg}</span>
+            <label for="email">E-mail </label><span style="color: red">${emailMsg}</span>
             <form:errors path="customerEmail" cssStyle="color: red" />
             <form:input path="customerEmail" id="email" class="form-Control" />
         </div>
@@ -35,47 +40,20 @@
         </div>
 
         <div class="form-group">
-            <label for="username">Login</label><span style="color: red">${usernameMsg}</span>
+            <label for="username">Login </label><span style="color: red">${usernameMsg}</span>
             <form:errors path="username" cssStyle="color: red" />
             <form:input path="username" id="username" class="form-Control" />
         </div>
 
         <div class="form-group">
-            <label for="password">Hasło</label><form:errors path="password" cssStyle="color: red" />
+            <label for="password">Hasło </label><form:errors path="password" cssStyle="color: red" />
             <form:password path="password" id="password" class="form-Control" />
         </div>
 
-        <h3>Adres rozliczeniowy</h3>
+        <h3>Adres</h3>
 
         <div class="form-group">
-            <label for="billingStreet">Ulica</label>
-            <form:input path="billingAddress.streetName" id="billingStreet" class="form-Control" />
-        </div>
-
-        <div class="form-group">
-            <label for="billingApartmentNumber">Numer mieszkania</label>
-            <form:input path="billingAddress.apartmentNumber" id="billingApartmentNumber" class="form-Control" />
-        </div>
-
-        <div class="form-group">
-            <label for="billingCity">Miasto</label>
-            <form:input path="billingAddress.city" id="billingCity" class="form-Control" />
-        </div>
-
-        <div class="form-group">
-            <label for="billingZipCode">Kod pocztowy</label>
-            <form:input path="billingAddress.zipCode" id="billingZipCode" class="form-Control" />
-        </div>
-
-        <div class="form-group">
-            <label for="billingCountry">Państwo</label>
-            <form:input path="billingAddress.country" id="billingCountry" class="form-Control" />
-        </div>
-
-        <h3>Adres do wysyłki</h3>
-
-        <div class="form-group">
-            <label for="shippingStreet">Ulica</label>
+            <label for="shippingStreet">Ulica i numer domu</label>
             <form:input path="shippingAddress.streetName" id="shippingStreet" class="form-Control" />
         </div>
 
@@ -102,10 +80,10 @@
 
 
         <br><br>
-        <input type="submit" class="btn btn-default">
+        <input type="submit" class="btn btn-info">
         <a href="<c:url value="/" />" class="btn btn-default">Anuluj</a>
 
         </form:form>
-
+        </div>
 
 <%@include file="/WEB-INF/views/template/footer.jsp"%>

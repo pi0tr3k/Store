@@ -22,7 +22,7 @@
 
         <section class="container" >
         <p>
-            <a href="<spring:url value="/product/productList" />" class="btn btn-default">Produkty</a>
+            <a href="<spring:url value="/" />" class="btn btn-info">Powrót do strony głównej</a>
         </p>
         </section>
 

@@ -5,19 +5,16 @@
 
     <var name="order" class="pl.edu.pw.javaee.store.model.CustomerOrder" />
 
-    <action-state id="addCartToOrder">
-        <evaluate expression="cartDaoImpl.validate(requestParameters.cartId)" result="order.cart" />
-        <transition to="InvalidCartWarning" on-exception="java.io.IOException" />
-        <transition to="collectCustomerInfo" />
-    </action-state>
+        <action-state id="addCartToOrder">
 
-    <view-state id="collectCustomerInfo" view="collectCustomerInfo.jsp" model="order">
-        <transition on="customerInfoCollected" to="collectShippingDetail" />
-    </view-state>
+            <evaluate expression="customerOrderDaoImpl.validateOrder(requestParameters.orderId)" result="order" />
+            <transition to="invalidCartWarning" on-exception="java.io.IOException" />
+
+            <transition to="collectShippingDetail" />
+        </action-state>
 
     <view-state id="collectShippingDetail" view="collectShippingDetail.jsp" model="order">
         <transition on="shippingDetailCollected" to="orderConfirmation" />
-        <transition on="backToCollectCustomerInfo" to="collectCustomerInfo" />
     </view-state>
 
     <view-state id="orderConfirmation">
@@ -26,7 +23,8 @@
     </view-state>
 
     <action-state id="processOrder">
-        <evaluate expression="cartItemDaoImpl.removeAllCartItems(order.cart)" />
+        <evaluate expression="customerOrderDaoImpl.confirmOrder(order)" />
+        <transition to="invalidCartWarning" on-exception="java.io.IOException" />
         <transition to="thankCustomer" />
     </action-state>
 

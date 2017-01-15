@@ -8,12 +8,14 @@
 
 <div class="container wrapper">
 
-    <div class="container">
-        <div class="page-header">
-            <h1>Zarządzanie klientami</h1>
-            <p class="lead">To jest strona do zarządania klientami.</p>
-
-        </div>
+    <div class="container-fluid">
+        <section>
+            <div class="jumbotron">
+                <div class="container">
+                    <h1>Zarządzanie klientami</h1>
+                </div>
+            </div>
+        </section>
 
         <table class="table table-striped table-hover">
             <tr class="success">

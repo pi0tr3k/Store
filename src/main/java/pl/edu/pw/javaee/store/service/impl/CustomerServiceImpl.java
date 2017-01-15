@@ -20,7 +20,7 @@ public class CustomerServiceImpl implements CustomerService {
         customerDao.addCustomer(customer);
     }
 
-    public Customer getCustomerById (int id) {
+    public Customer getCustomerById (long id) {
         return customerDao.getCustomerById(id);
     }
 

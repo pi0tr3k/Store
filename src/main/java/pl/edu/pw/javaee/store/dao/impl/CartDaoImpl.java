@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import pl.edu.pw.javaee.store.dao.CartDao;
 import pl.edu.pw.javaee.store.model.Cart;
+import pl.edu.pw.javaee.store.model.CustomerOrder;
 import pl.edu.pw.javaee.store.service.CustomerOrderService;
 
 import java.io.IOException;
@@ -39,12 +40,4 @@ public class CartDaoImpl implements CartDao {
         session.flush();
     }
 
-    public Cart validate(long cartId) throws IOException {
-        Cart cart = getCartById(cartId);
-        if (cart == null || cart.getCartItems().size() == 0) {
-            throw new IOException(cartId+"");
-        }
-        update(cart);
-        return cart;
-    }
 }

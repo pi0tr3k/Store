@@ -67,7 +67,7 @@ public class AdminProduct {
     }
 
     @RequestMapping("/product/editProduct/{id}")
-    public String addProduct(@PathVariable("id") int id, Model model){
+    public String addProduct(@PathVariable("id") long id, Model model){
         Product product = productService.getProductById(id);
         model.addAttribute("product", product);
         return "editProduct";
@@ -86,6 +86,7 @@ public class AdminProduct {
         path = Paths.get(rootDirectory + "\\WEB-INF\\resources\\images\\"+product.getProductId()+".png");
 
         if (productImage != null && !productImage.isEmpty()){
+
             try{
                 productImage.transferTo(new File(path.toString()));
             }
@@ -101,7 +102,7 @@ public class AdminProduct {
     }
 
     @RequestMapping("product/deleteProduct/{id}")
-    public String deleteProduct(@PathVariable int id, Model model, HttpServletRequest request){
+    public String deleteProduct(@PathVariable long id, Model model, HttpServletRequest request){
 
         String rootDirectory = request.getSession().getServletContext().getRealPath("/");
         path = Paths.get(rootDirectory + "\\WEB-INF\\resources\\images\\"+id+".png");

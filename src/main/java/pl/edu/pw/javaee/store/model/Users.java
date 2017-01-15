@@ -18,11 +18,11 @@ import javax.persistence.Id;
 public class Users {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
-    private int userId;
+    @GeneratedValue
+    private long userId;
 
     private String username;
     private String password;
     private boolean enabled;
-    private int customerId;
+    private long customerId;
 }

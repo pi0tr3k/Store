@@ -1,10 +1,13 @@
 package pl.edu.pw.javaee.store.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Date;
+import java.util.List;
 
 /**
  * Created by chada on 07.11.2016.
@@ -18,22 +21,21 @@ public class CustomerOrder implements Serializable {
 
     @Id
     @GeneratedValue
-    private int customerOrderId;
+    private long customerOrderId;
 
-    @OneToOne
+
+    @ManyToOne
     @JoinColumn(name = "cartId")
     private Cart cart;
 
+    @JsonIgnore
     @OneToOne
-    @JoinColumn(name = "customerId")
-    private Customer customer;
-
-    @OneToOne
-    @JoinColumn(name = "billingAddressId")
-    private BillingAddress billingAddress;
-
-    @OneToOne
-    @JoinColumn(name = "shippingAddressId")
     private ShippingAddress shippingAddress;
+
+    private String customerName;
+    private Date date;
+    private boolean paid;
+    private boolean sent;
+    private boolean confirmed;
 
 }

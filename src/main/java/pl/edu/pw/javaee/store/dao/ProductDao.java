@@ -11,7 +11,13 @@ public interface ProductDao {
 
     List<Product> getProductList();
 
-    Product getProductById(int id);
+    List<Product> getTennisProducts();
+
+    List<Product> getTableTennisProducts();
+
+    List<Product> getClothesProducts();
+
+    Product getProductById(long id);
 
     void addProduct(Product product);
 

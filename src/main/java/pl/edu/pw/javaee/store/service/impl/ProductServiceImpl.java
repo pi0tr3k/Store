@@ -18,13 +18,19 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductDao productDao;
 
-    public Product getProductById(int id) {
+    public Product getProductById(long id) {
         return productDao.getProductById(id);
     }
 
     public List<Product> getProductList() {
         return productDao.getProductList();
     }
+
+    public List<Product> getTennisProducts() {return productDao.getTennisProducts();}
+
+    public List<Product> getTableTennisProducts() {return productDao.getTableTennisProducts();}
+
+    public List<Product> getClothesProducts() {return productDao.getClothesProducts();}
 
     public void  addProduct(Product product) {
         productDao.addProduct(product);

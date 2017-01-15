@@ -14,15 +14,15 @@
         <section>
             <div class="jumbotron">
                 <div class="container">
-                    <h1 class="alert alert-danger">Zamówienie anulowane</h1>
-                    <p>Twoje zamówienie zostało anulowane, możesz kontynuować zakupy.</p>
+                    <h1>Zamówienie anulowane</h1>
+                    <p>Możesz kontynuować zakupy</p>
                 </div>
             </div>
         </section>
 
         <section class="container" >
             <p>
-                <a href="<spring:url value="/product/productList" />" class="btn btn-default">Produkty</a>
+                <a href="<spring:url value="/" />" class="btn btn-info">Powrót do strony głównej</a>
             </p>
         </section>
 

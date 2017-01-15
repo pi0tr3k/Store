@@ -7,6 +7,8 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by chada on 07.11.2016.
@@ -20,26 +22,22 @@ public class Customer implements Serializable {
 
     @Id
     @GeneratedValue
-    private int customerId;
+    private long customerId;
 
-    @NotEmpty (message = "Nazwa klienta nie może być pusta")
+    @NotEmpty (message = "Proszę podać imię i nazwisko")
     private String customerName;
 
-    @NotEmpty (message = "Email klienta nie może być pusty")
+    @NotEmpty (message = "Proszę podać e-mail")
     private String customerEmail;
     private String customerPhone;
 
-    @NotEmpty (message = "Nazwa użytkownika nie może być pusta")
+    @NotEmpty (message = "Proszę podać nazwę użytkownika")
     private String username;
 
-    @NotEmpty (message = "Hasło użytkownika nie może być puste")
+    @NotEmpty (message = "Proszę podać hasło")
     private String password;
 
     private boolean enabled;
-
-    @OneToOne
-    @JoinColumn (name = "billingAddressId")
-    private BillingAddress billingAddress;
 
     @OneToOne
     @JoinColumn (name = "shippingAddressId")

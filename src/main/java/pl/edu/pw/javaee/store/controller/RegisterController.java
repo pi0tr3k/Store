@@ -7,7 +7,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import pl.edu.pw.javaee.store.model.BillingAddress;
 import pl.edu.pw.javaee.store.model.Customer;
 import pl.edu.pw.javaee.store.model.ShippingAddress;
 import pl.edu.pw.javaee.store.service.CustomerService;
@@ -27,9 +26,7 @@ public class RegisterController {
     @RequestMapping ("/register")
     public String registerCustomer(Model model) {
         Customer customer = new Customer();
-        BillingAddress billingAddress = new BillingAddress();
         ShippingAddress shippingAddress = new ShippingAddress();
-        customer.setBillingAddress(billingAddress);
         customer.setShippingAddress(shippingAddress);
         model.addAttribute("customer", customer);
 
@@ -47,7 +44,7 @@ public class RegisterController {
 
         for (Customer cust: customerList) {
             if (customer.getCustomerEmail().equals(cust.getCustomerEmail())) {
-                model.addAttribute("emailMsg","Email już istnieje");
+                model.addAttribute("emailMsg","E-mail już istnieje");
                 return "registerCustomer";
             }
             if (customer.getUsername().equals(cust.getUsername())) {

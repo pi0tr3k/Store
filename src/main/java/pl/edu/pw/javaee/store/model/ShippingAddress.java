@@ -21,7 +21,7 @@ public class ShippingAddress implements Serializable{
 
     @Id
     @GeneratedValue
-    private int shippingAddressId;
+    private long shippingAddressId;
     private String streetName;
     private String apartmentNumber;
     private String city;
@@ -33,12 +33,6 @@ public class ShippingAddress implements Serializable{
 
     @Override
     public String toString() {
-        return "ShippingAddress{" +
-                "streetName='" + streetName + '\'' +
-                ", apartmentNumber='" + apartmentNumber + '\'' +
-                ", city='" + city + '\'' +
-                ", country='" + country + '\'' +
-                ", zipCode='" + zipCode + '\'' +
-                '}';
+        return streetName + " " + apartmentNumber + ", " + zipCode + " " + city + ", " + country;
     }
 }

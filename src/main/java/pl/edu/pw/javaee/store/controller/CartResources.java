@@ -41,7 +41,7 @@ public class CartResources {
 
     @RequestMapping(value = "/add/{productId}", method = RequestMethod.PUT)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void addItem(@PathVariable(value = "productId") int productId, @AuthenticationPrincipal User activeUser) {
+    public void addItem(@PathVariable(value = "productId") long productId, @AuthenticationPrincipal User activeUser) {
         Customer customer = customerService.getCustomerByUsername(activeUser.getUsername());
         Cart cart = customer.getCart();
         Product product = productService.getProductById(productId);
@@ -64,7 +64,7 @@ public class CartResources {
 
     @RequestMapping(value = "/remove/{productId}", method = RequestMethod.PUT)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void removeItem(@PathVariable int productId){
+    public void removeItem(@PathVariable long productId){
         CartItem cartItem = cartItemService.getCartItemByProductId(productId);
         cartItemService.removeCartItem(cartItem);
     }

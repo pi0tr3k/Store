@@ -21,8 +21,8 @@ public class Product implements Serializable{
 
     private static final long serialVersionUID = 6206417089308276694L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int productId;
+    @GeneratedValue
+    private long productId;
     @NotEmpty (message = "Podaj nazwę produktu")
     private String productName;
     @Min(value = 0, message = "Cena produktu nie może być mniejsza niż zero")

@@ -8,11 +8,14 @@
 
 <div class="container wrapper">
 
-    <div class="container">
-        <div class="page-header">
-            <h1>Szczegóły produktu</h1>
-            <p class="lead">Tutaj znajdziesz szczegółowe informacje o produkcie</p>
-        </div>
+    <div class="container-fluid">
+        <section>
+            <div class="jumbotron">
+                <div class="container">
+                    <h2>${product.productName}</h2>
+                </div>
+            </div>
+        </section>
 
         <div class="container" ng-app = "cartApp">
             <div class="row">
@@ -21,26 +24,36 @@
                          style="width:100%"/>
                 </div>
                 <div class="col-md-5">
-                    <h3>${product.productName}</h3>
                     <p>${product.productDescription}</p>
                     <p><strong>Producent: </strong>${product.productManufacturer}</p>
                     <p><strong>Kategoria: </strong>${product.productCategory}</p>
-                    <p><strong>Cena: </strong>${product.productPrice} PLN</p>
+                    <p><strong>Opis: </strong>${product.productDescription}</p>
+                    <h4>${product.productPrice} PLN</h4>
 
                     <br>
 
-                    <c:set var="role" scope="page" value="${param.role}" />
-                    <c:set var="url" scope="page" value="/product/productList" />
-                    <c:if test="${role='admin'}">
-                        <c:set var="url" scope="page" value="/admin/productInventory" />
+
+                    <c:set var="back" scope="page" value="/product/productList/tableTennis" />
+                    <c:if test = "${product.productCategory == 'Tenis ziemny'}">
+                        <c:set var="back" scope="page" value="/product/productList/tennis" />
+                    </c:if>
+                    <c:if test = "${product.productCategory == 'Ubrania i akcesoria'}">
+                        <c:set var="back" scope="page" value="/product/productList/clothes" />
+                    </c:if>
+                    <c:if test = "${pageContext.request.userPrincipal.name == 'admin'}">
+                        <c:set var="back" scope="page" value="/admin/productInventory" />
                     </c:if>
 
+
                     <p ng-controller="cartCtrl">
-                    <a href="<c:url value="${url}" />" class="btn btn-default">Powrót</a>
-                    <a href="#" class="btn btn-warning btn-large" ng-click="addToCart('${product.productId}')">
+                    <a href="<c:url value="${back}" />" class="btn btn-default">Powrót</a>
+
+<c:if test = "${pageContext.request.userPrincipal.name != 'admin'}">
+                    <a href="#" class="btn btn-info btn-large" ng-click="addToCart('${product.productId}')">
                         <span class="glyphicon glyphicon-shopping-cart"></span> Zamów</a>
                     <a href="<spring:url value="/customer/cart" />" class="btn btn-default">
-                        <span class="glyphicon glyphicon-hand-right"></span>Zobacz koszyk</a>
+                        <span class="glyphicon glyphicon-hand-right"></span> Koszyk</a>
+</c:if>
                     </p>
                 </div>
             </div>

@@ -16,8 +16,10 @@
             <img class="first-slide home-image" src="<c:url value="/resources/images/back1.jpg"/>" alt="First slide">
             <div class="container">
                 <div class="carousel-caption">
-                    <h1>Example headline.</h1>
-                    <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+                    <h2>You always want to win. That is why you play tennis, because you love the sport and
+                        try to be the best you can at it.
+                    </h2>
+                    <p>Roger Federer</p>
                 </div>
             </div>
         </div>
@@ -25,17 +27,21 @@
             <img class="second-slide home-image" src="<c:url value="/resources/images/back2.jpg"/>" alt="Second slide">
             <div class="container">
                 <div class="carousel-caption">
-                    <h1>Another example headline.</h1>
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    <h2>Tennis takes care of everything. It requires agility and quickness to get to the ball,
+                        core strength to get power into your shorts and stamina to last for an entire match.
+                    </h2>
+                    <p>Samantha Stosur</p>
                 </div>
             </div>
         </div>
         <div class="item">
-            <img class="third-slide home-image" src="<c:url value="/resources/images/back3.jpg"/>" alt="Third slide">
+            <img class="third-slide home-image" src="<c:url value="/resources/images/back4.jpg"/>" alt="Third slide">
             <div class="container">
                 <div class="carousel-caption">
-                    <h1>One more for good measure.</h1>
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    <h2>If you can keep playing tennis when somebody is shooting a gun down the street,
+                        that's concentration.
+                        </h2>
+                    <p>Serena Williams</p>
                 </div>
             </div>
         </div>
@@ -60,22 +66,19 @@
     <!-- Three columns of text below the carousel -->
     <div class="row">
         <div class="col-lg-4">
-            <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <img class="img-circle" src="<c:url value="/resources/images/table_tennis_racket_rect.jpg"/>" alt="Generic placeholder image" width="300" height="300">
+            <h2>Tenis stołowy</h2>
+            <a class="btn btn-default" href="<c:url value="/product/productList/tableTennis" /> " role="button">Przejdź &raquo;</a>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-            <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-            <h2>Heading</h2>
-            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <img class="img-circle" src="<c:url value="/resources/images/tennis-ball-net.jpg"/>" alt="Generic placeholder image" width="300" height="300">
+            <h2>Tenis ziemny</h2>
+            <a class="btn btn-default" href="<c:url value="/product/productList/tennis" /> " role="button">Przejdź &raquo;</a>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-            <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <img class="img-circle" src="<c:url value="/resources/images/serena.jpg"/>" alt="Generic placeholder image" width="300" height="300">
+            <h2>Odzież i akcesoria</h2>
+            <a class="btn btn-default" href="<c:url value="/product/productList/clothes" /> " role="button">Przejdź &raquo;</a>
         </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
 

@@ -8,47 +8,55 @@
 <div class="container wrapper">
 
     <div class="container">
-        <div class="page-header">
-            <h1>Adres dostawy</h1>
-            <p class="lead">Wprowadź adres dostawy</p>
-        </div>
+        <section>
+            <div class="jumbotron">
+                <div class="container">
+                    <h1>Adres dostawy</h1>
+                </div>
+            </div>
+        </section>
 
+        <div class="collectInfoForm">
         <form:form commandName="order" class="form-horizontal">
 
-        <h3>Adres dostawy</h3>
+        <div class="form-group">
+            <label for="name">Imię i nazwisko</label>
+            <form:input path="customerName" id="name" class="form-Control" />
+        </div>
 
         <div class="form-group">
             <label for="shippingStreet">Ulica</label>
-            <form:input path="cart.customer.shippingAddress.streetName" id="shippingStreet" class="form-Control" />
+            <form:input path="shippingAddress.streetName" id="shippingStreet" class="form-Control" />
         </div>
 
         <div class="form-group">
             <label for="shippingApartmentNumber">Numer mieszkania</label>
-            <form:input path="cart.customer.shippingAddress.apartmentNumber" id="shippingApartmentNumber" class="form-Control" />
+            <form:input path="shippingAddress.apartmentNumber" id="shippingApartmentNumber" class="form-Control" />
         </div>
 
         <div class="form-group">
             <label for="shippingCity">Miasto</label>
-            <form:input path="cart.customer.shippingAddress.city" id="shippingCity" class="form-Control" />
+            <form:input path="shippingAddress.city" id="shippingCity" class="form-Control" />
         </div>
 
         <div class="form-group">
             <label for="shippingZipCode">Kod pocztowy</label>
-            <form:input path="cart.customer.shippingAddress.zipCode" id="shippingZipCode" class="form-Control" />
+            <form:input path="shippingAddress.zipCode" id="shippingZipCode" class="form-Control" />
         </div>
 
         <div class="form-group">
             <label for="shippingCountry">Państwo</label>
-            <form:input path="cart.customer.shippingAddress.country" id="shippingCountry" class="form-Control" />
+            <form:input path="shippingAddress.country" id="shippingCountry" class="form-Control" />
         </div>
 
         <input type="hidden" name="flowExecutionKey" />
 
         <br><br>
-        <button class="btn btn-default" name="_eventId_backToCollectCustomerInfo">Powrót</button>
-        <input type="submit" value="Kontynuuj" class="btn btn-default" name="_eventId_shippingDetailCollected" />
         <button class="btn btn-default" name="_eventId_cancel">Anuluj</button>
+        <input type="submit" value="Kontynuuj" class="btn btn-info pull-right" name="_eventId_shippingDetailCollected" />
         </form:form>
 
-
+            </div>
+    </div>
+</div>
 <%@include file="/WEB-INF/views/template/footer.jsp"%>

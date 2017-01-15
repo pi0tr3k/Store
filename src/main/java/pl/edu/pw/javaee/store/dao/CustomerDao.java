@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface CustomerDao {
     void addCustomer(Customer customer);
-    Customer getCustomerById (int customerId);
+    Customer getCustomerById (long customerId);
     List<Customer> getAllCustomers();
     Customer getCustomerByUsername(String username);
 }

@@ -27,7 +27,7 @@ public class ProductDaoImpl implements ProductDao {
         session.flush();
     }
 
-    public Product getProductById (int id){
+    public Product getProductById (long id){
         Session session = sessionFactory.getCurrentSession();
         Product product = (Product) session.get(Product.class, id);
         session.flush();
@@ -43,6 +43,36 @@ public class ProductDaoImpl implements ProductDao {
     public List<Product> getProductList(){
         Session session = sessionFactory.getCurrentSession();
         Query query = session.createQuery("from Product");
+        List<Product> products = query.list();
+        session.flush();
+
+        return products;
+    }
+
+    public List<Product> getTennisProducts() {
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("from Product where productCategory = ?");
+        query.setString(0, "Tenis ziemny");
+        List<Product> products = query.list();
+        session.flush();
+
+        return products;
+    }
+
+    public List<Product> getTableTennisProducts() {
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("from Product where productCategory = ?");
+        query.setString(0, "Tenis stołowy");
+        List<Product> products = query.list();
+        session.flush();
+
+        return products;
+    }
+
+    public List<Product> getClothesProducts() {
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("from Product where productCategory = ?");
+        query.setString(0, "Ubrania i akcesoria");
         List<Product> products = query.list();
         session.flush();
 

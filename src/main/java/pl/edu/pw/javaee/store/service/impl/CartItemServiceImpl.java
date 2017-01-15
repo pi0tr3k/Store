@@ -28,7 +28,7 @@ public class CartItemServiceImpl implements CartItemService {
         cartItemDao.removeAllCartItems(cart);
     }
 
-    public CartItem getCartItemByProductId(int productId) {
+    public CartItem getCartItemByProductId(long productId) {
         return cartItemDao.getCartItemByProductId(productId);
     }
 }

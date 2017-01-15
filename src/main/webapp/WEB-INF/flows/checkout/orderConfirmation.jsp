@@ -10,10 +10,13 @@
 <div class="container wrapper">
 
     <div class="container">
-        <div class="page-header">
-            <h1>Zamówienie</h1>
-            <p class="lead">Potwierdzenie zamówienia</p>
-        </div>
+        <section>
+            <div class="jumbotron">
+                <div class="container">
+                    <h1>Potwierdzenie zamówienia</h1>
+                </div>
+            </div>
+        </section>
 
         <div class="container">
             <div class="row">
@@ -23,45 +26,35 @@
             <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
 
         <div class="text-center">
-            <h1>Rachunek</h1>
+            <h1>Zamówienie</h1>
         </div>
 
                 <div class="row">
                     <div class="col-xs-6 col-sm-6 col-md-6">
                         <address>
                             <strong>Adres dostawy</strong><br>
-                                ${order.cart.customer.shippingAddress.streetName} ${order.cart.customer.shippingAddress.apartmentNumber}
+                                ${order.customerName}
                             <br>
-                                ${order.cart.customer.shippingAddress.zipCode} ${order.cart.customer.shippingAddress.city}
+                                ${order.shippingAddress.streetName} ${order.shippingAddress.apartmentNumber}
                             <br>
-                                ${order.cart.customer.shippingAddress.country}
+                                ${order.shippingAddress.zipCode} ${order.shippingAddress.city}
+                            <br>
+                                ${order.shippingAddress.country}
                             <br>
                         </address>
                         </div>
                     <div class="col-xs-6 col-sm-6 col-md-6 text-right">
-                    <p>Data dostawy: <fmt:formatDate type="date" value="${now}" /></p>    
+                    <p>Data zamówienia: <fmt:formatDate type="date" value="${now}" /></p>
                     </div>
                     </div>
 
-                <div class="row">
-                    <div class="col-xs-6 col-sm-6 col-md-6">
-                        <address>
-                            <strong>Adres rozliczeniowy</strong><br>
-                                ${order.cart.customer.billingAddress.streetName} ${order.cart.customer.billingAddress.apartmentNumber}
-                            <br>
-                                ${order.cart.customer.billingAddress.zipCode} ${order.cart.customer.billingAddress.city}
-                            <br>
-                                ${order.cart.customer.billingAddress.country}
-                            <br>
-                        </address>
-                    </div>
-                    </div>
+
                 <div class="row">
                 <table class="table table-hover">
                     <thead>
                     <tr>
-                        <th>Produkt</th>
-                        <th>#</th>
+                        <th>Nazwa produktu</th>
+                        <th>Sztuk</th>
                         <th class="text-center">Cena</th>
                         <th class="text-center">Suma</th>
                     </tr>
@@ -80,9 +73,9 @@
                         <td></td>
                         <td></td>
                         <td class="text-right">
-                            <h4><strong>Suma:</strong></h4>
+                            <h4><strong>Do zapłaty:</strong></h4>
                         </td>
-                        <td class="text-center text-danger">
+                        <td class="text-center text-primary">
                             <h4><strong>${order.cart.grandTotal} PLN</strong></h4>
                         </td>
                     </tr>
@@ -94,8 +87,9 @@
 
         <br><br>
         <button class="btn btn-default" name="_eventId_backToCollectShippingDetail">Powrót</button>
-        <input type="submit" value="Potwierdź zamówienie" class="btn btn-default" name="_eventId_orderConfirmed" />
-        <button class="btn btn-default" name="_eventId_cancel">Anuluj</button>
+                <button class="btn btn-default" name="_eventId_cancel">Anuluj</button>
+                <input type="submit" value="Potwierdź zamówienie" class="btn btn-primary pull-right" name="_eventId_orderConfirmed" />
+
             </div>
         </form:form>
                 </div>

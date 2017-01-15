@@ -17,8 +17,8 @@ import javax.persistence.Id;
 @Entity
 public class Authorities {
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
-    private int authoritiesId;
+    @GeneratedValue
+    private long authoritiesId;
     private String username;
     private String authority;
 }

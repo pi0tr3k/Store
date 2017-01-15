@@ -55,7 +55,9 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="<c:url value="/" /> ">Strona główna</a></li>
-                        <li><a href="<c:url value="/product/productList" /> ">Produkty</a></li>
+                        <li><a href="<c:url value="/product/productList/tennis" /> ">Tenis ziemny</a></li>
+                        <li><a href="<c:url value="/product/productList/tableTennis" /> ">Tenis stołowy</a></li>
+                        <li><a href="<c:url value="/product/productList/clothes" /> ">Odzież i akcesoria</a></li>
                     </ul>
                     <ul class="nav navbar-nav pull-right">
                        <c:if test="${pageContext.request.userPrincipal.name != null}">

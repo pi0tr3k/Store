@@ -7,11 +7,14 @@
 
 <div class="container wrapper">
 
-    <div class="container">
-        <div class="page-header">
-            <h1>Dodaj produkt</h1>
-            <p class="lead">Wypełnij poniższy formularz aby dodać produkt</p>
-        </div>
+    <div class="container-fluid">
+        <section>
+            <div class="jumbotron">
+                <div class="container">
+                    <h1>Dodaj produkt</h1>
+                </div>
+            </div>
+        </section>
 
         <form:form action="${pageContext.request.contextPath}/admin/product/addProduct" method="post"
                    commandName="product" enctype="multipart/form-data">
@@ -26,6 +29,8 @@
             <form:radiobutton path="productCategory" id="category" value="Tenis ziemny" />Tenis ziemny</label>
             <label class="checkbox-inline">
                 <form:radiobutton path="productCategory" id="category" value="Tenis stołowy" />Tenis stołowy</label>
+            <label class="checkbox-inline">
+            <form:radiobutton path="productCategory" id="category" value="Ubrania i akcesoria" />Ubrania i akcesoria</label>
         </div>
 
         <div class="form-group">
@@ -55,7 +60,7 @@
 
         <br><br>
 
-        <input type="submit" class="btn btn-default">
+        <input type="submit" class="btn btn-success">
         <a href="<c:url value="/admin/productInventory" />" class="btn btn-default">Anuluj</a>
 
         </form:form>

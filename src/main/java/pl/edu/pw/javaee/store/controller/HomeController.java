@@ -20,7 +20,7 @@ public class HomeController {
     public String login(@RequestParam(value = "error", required = false) String error,
                         @RequestParam(value = "logout", required = false) String logout, Model model){
         if (error != null) {
-            model.addAttribute("error", "Nieprawidłowa nawa użytkownika lub hasło.");
+            model.addAttribute("error", "Nieprawidłowy login lub hasło");
         }
         if (logout != null) {
             model.addAttribute("logout", "Zostałeś pomyślnie wylogowany.");

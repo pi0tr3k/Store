@@ -15,28 +15,20 @@
             <div class="jumbotron">
                 <div class="container">
                     <h1>Koszyk</h1>
-                    <p>Wszystkie wybrane produkty w Twoim koszyku</p>
                 </div>
             </div>
         </section>
 
-        <section class="container" ng-app="cartApp">
+        <section class="container-fluid" ng-app="cartApp">
             <div ng-controller = "cartCtrl" ng-init="initCartId('${cartId}')">
-            <div>
-                <a class="btn btn-danger pull-left" ng-click="clearCart()"><span class="glyphicon glyphicon-remove"></span>
-                    Wyczyść koszyk</a>
-                <a href="<spring:url value="/order/${cartId}"/> " class="btn btn-success pull-right">
-                    <span class="glyphicon-shopping-cart glyphicon"></span>Złóż zamówienie
-                </a>
-            </div>
 
             <table class="table table-hover">
                 <tr>
                     <th>Nazwa produktu</th>
-                    <th>Cena jednostkowa</th>
-                    <th>Ilość</th>
                     <th>Cena</th>
-                    <th>Akcja</th>
+                    <th>Sztuk</th>
+                    <th>Suma</th>
+                    <th></th>
                 </tr>
                 <tr ng-repeat = "item in cart.cartItems">
                     <td>{{item.product.productName}}</td>
@@ -44,18 +36,26 @@
                     <td>{{item.quantity}}</td>
                     <td>{{item.totalPrice}}</td>
                     <td><a href="#" class="label label-danger" ng-click="removeFromCart(item.product.productId)">
-                        <span class="glyphicon glyphicon-remove"></span>usuń</a></td>
+                        <span class="glyphicon glyphicon-remove"></span> Usuń</a></td>
                 </tr>
                 <tr>
                     <th></th>
                     <th></th>
-                    <th>GrandTotal</th>
+                    <th>Do zapłaty:</th>
                     <th>{{calGrandTotal()}}</th>
                     <th></th>
                 </tr>
             </table>
 
-            <a href="<spring:url value="/productList" />" class="btn btn-default">Kontynuuj zakupy</a>
+
+                    <a href="<spring:url value="/" />" class="btn btn-default">Powrót do strony głównej</a>
+                    <a class="btn btn-default" ng-click="clearCart()">
+                        <span class="glyphicon glyphicon-remove"></span> Wyczyść koszyk</a>
+                    <a href="<spring:url value="/order/${cartId}"/> " class="btn btn-primary pull-right">
+                        <span class="glyphicon-shopping-cart glyphicon"></span> Złóż zamówienie</a>
+
+
+
             </div>
         </section>
 
@@ -65,6 +65,5 @@
 
 </div>
 
-<!--nie brakuje tu angulara?-->
 <script src="<c:url value="/resources/js/controller.js"/> "></script>
 <%@include file="/WEB-INF/views/template/footer.jsp"%>

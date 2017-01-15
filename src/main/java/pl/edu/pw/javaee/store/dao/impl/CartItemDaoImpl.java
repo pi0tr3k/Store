@@ -7,9 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import pl.edu.pw.javaee.store.dao.CartItemDao;
+import pl.edu.pw.javaee.store.dao.CustomerOrderDao;
+import pl.edu.pw.javaee.store.dao.ProductDao;
 import pl.edu.pw.javaee.store.model.Cart;
 import pl.edu.pw.javaee.store.model.CartItem;
+import pl.edu.pw.javaee.store.model.CustomerOrder;
+import pl.edu.pw.javaee.store.model.Product;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -21,6 +26,12 @@ public class CartItemDaoImpl implements CartItemDao{
 
     @Autowired
     SessionFactory sessionFactory;
+
+    @Autowired
+    ProductDao productDao;
+
+    @Autowired
+    CustomerOrderDao orderDao;
 
     public void addCartItem(CartItem cartItem) {
         Session session = sessionFactory.getCurrentSession();
@@ -41,11 +52,13 @@ public class CartItemDaoImpl implements CartItemDao{
         }
     }
 
-    public CartItem getCartItemByProductId(int productId) {
+    public CartItem getCartItemByProductId(long productId) {
         Session session = sessionFactory.getCurrentSession();
         Query query = session.createQuery("from CartItem where productId = ?");
-        query.setInteger(0, productId);
+        query.setLong(0, productId);
         return (CartItem) query.uniqueResult();
     }
+
+
 
 }

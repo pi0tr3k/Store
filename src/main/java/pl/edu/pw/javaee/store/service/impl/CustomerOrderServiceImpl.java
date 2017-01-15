@@ -15,7 +15,7 @@ import java.util.List;
  * Created by chada on 11.11.2016.
  */
 @Service
-public class CustomerOrderServiceImpl implements CustomerOrderService{
+public class CustomerOrderServiceImpl implements CustomerOrderService {
     @Autowired
     private CustomerOrderDao customerOrderDao;
     @Autowired
@@ -33,5 +33,13 @@ public class CustomerOrderServiceImpl implements CustomerOrderService{
             grandTotal += cartItem.getTotalPrice();
         }
         return grandTotal;
+    }
+
+    public CustomerOrder getOrderById (long id) {
+        return customerOrderDao.getOrderById(id);
+    }
+
+    public List<CustomerOrder> getAllConfirmedOrders() {
+        return customerOrderDao.getAllConfirmedOrders();
     }
 }
