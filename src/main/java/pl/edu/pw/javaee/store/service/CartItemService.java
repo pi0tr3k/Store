@@ -4,7 +4,8 @@ import pl.edu.pw.javaee.store.model.Cart;
 import pl.edu.pw.javaee.store.model.CartItem;
 
 /**
- * Created by chada on 11.11.2016.
+ * @author  Piotr Pluta
+ * @version 1.0
  */
 public interface CartItemService {
 

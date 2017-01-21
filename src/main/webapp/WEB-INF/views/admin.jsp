@@ -1,3 +1,7 @@
+<!--
+- Author: Karolina Chadaj
+- Description: Widok panelu administracyjnego
+-->
 <%@include file="/WEB-INF/views/template/header.jsp"%>
 <%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 

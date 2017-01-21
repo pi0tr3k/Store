@@ -11,7 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by chada on 07.11.2016.
+ * @author  Karolina Chadaj
+ * @version 1.0
  */
 @Getter
 @Setter

@@ -14,8 +14,10 @@ import pl.edu.pw.javaee.store.service.ProductService;
 import java.util.List;
 
 /**
- * Created by chada on 08.11.2016.
+ * @author  Karolina Chadaj
+ * @version 1.0
  */
+
 @Controller
 @RequestMapping("/admin")
 public class AdminHome {

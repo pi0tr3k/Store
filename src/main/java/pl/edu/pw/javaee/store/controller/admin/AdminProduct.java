@@ -21,7 +21,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
- * Created by chada on 08.11.2016.
+ * @author  Piotr Pluta
+ * @version 1.0
  */
 @Controller
 @RequestMapping("/admin")

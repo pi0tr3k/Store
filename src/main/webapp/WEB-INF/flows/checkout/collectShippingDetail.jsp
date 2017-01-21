@@ -1,3 +1,7 @@
+<%--
+  - Author: Karolina Chadaj
+  - Description: Widok logowania ...
+  --%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%@include file="/WEB-INF/views/template/header.jsp"%>

@@ -1,3 +1,9 @@
+<%--
+  - Author: Piotr Pluta
+  - Description: Widok z listą produktów kategorii Tenis Ziemny.
+    Dane pobierane są z powiązanego z tym widokiem modelu za pomocą wyrażenia ${products}.
+    JSTL pozwala iterować po wszystkich elementach produktów, zwracając ich poszczególne pola.
+  --%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>

@@ -15,7 +15,8 @@ import pl.edu.pw.javaee.store.model.Users;
 import java.util.List;
 
 /**
- * Created by chada on 09.11.2016.
+ * @author  Karolina Chadaj
+ * @version 1.0
  */
 @Repository
 @Transactional

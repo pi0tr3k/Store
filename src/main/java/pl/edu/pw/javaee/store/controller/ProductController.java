@@ -12,7 +12,11 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Created by chada on 08.11.2016.
+ * Klasa traktowana jako Kontroler we frameworku Model-Widok-Kontroler.
+ * Odpowiada więc za komunikację pomiędzy modelem danych a widokiem.
+ *
+ * @author  Piotr Pluta
+ * @version 1.0
  */
 @Controller
 @RequestMapping("/product")
@@ -21,6 +25,12 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
+    /**
+     * Pobierana jest lista produktów z obiektu klasy ProductService.
+     * Następnie metoda wiąże listę produktów z modelem.
+     * Zwracając tekst "productsTennis", widok productsTennis.jsp będzie automatycznie powiązany z modelem.
+     * W widoku productsTennis.jsp możemy więc użyć wyrażenia ${products}
+     */
     @RequestMapping("/productList/tennis")
     public String getTennisProducts(Model model) {
         List<Product> products = productService.getTennisProducts();
@@ -45,6 +55,12 @@ public class ProductController {
         return "productsTableTennis";
     }
 
+    /**
+     * W nawiasie klamrowym adnotacja @RequestMapping określa @PathVariable
+     * Tym razem prócz modelu, metoda przyjmuje jako parametr zmienną odczytaną z adresu ścieżki.
+     * Trafia ona do parametru o nazwie id. Następnie pobierany jest produkt o tym id, który dalej
+     * zostaje powiązany z widokiem viewProduct.jsp
+     */
     @RequestMapping("/viewProduct/{id}")
     public String viewProduct(@PathVariable long id, Model model) throws IOException {
         Product product = productService.getProductById(id);

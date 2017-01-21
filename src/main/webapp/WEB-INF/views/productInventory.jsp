@@ -1,3 +1,7 @@
+<%--
+  - Author: Piotr Pluta
+  - Description: Widok listy wszystkich produktów w panelu administracyjnym (możliwość dodawania/usuwanie/edycji).
+  --%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>

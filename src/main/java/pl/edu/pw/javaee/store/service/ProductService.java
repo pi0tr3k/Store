@@ -5,7 +5,8 @@ import pl.edu.pw.javaee.store.model.Product;
 import java.util.List;
 
 /**
- * Created by chada on 08.11.2016.
+ * @author  Piotr Pluta
+ * @version 1.0
  */
 public interface ProductService {
 

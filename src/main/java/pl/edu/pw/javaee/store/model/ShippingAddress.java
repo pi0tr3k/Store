@@ -10,7 +10,8 @@ import javax.persistence.OneToOne;
 import java.io.Serializable;
 
 /**
- * Created by chada on 07.11.2016.
+ * @author  Karolina Chadaj
+ * @version 1.0
  */
 @Entity
 @Getter

@@ -7,9 +7,9 @@ import pl.edu.pw.javaee.store.model.CustomerOrder;
 import java.io.IOException;
 
 /**
- * Created by chada on 05.11.2016.
+ * @author  Piotr Pluta
+ * @version 1.0
  */
-
 public interface CartDao {
     Cart getCartById (long cartId);
     void update(Cart cart);

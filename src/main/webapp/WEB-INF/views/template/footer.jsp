@@ -1,4 +1,7 @@
-
+<!--
+- Author: Karolina Chadaj
+- Description: Stopka
+-->
 <!-- FOOTER -->
 </div>
 </div>

@@ -13,7 +13,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by chada on 05.11.2016.
+ * @author  Piotr Pluta
+ * @version 1.0
  */
 @Getter
 @Setter

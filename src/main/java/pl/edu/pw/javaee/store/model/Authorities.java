@@ -9,9 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * Created by chada on 07.11.2016.
+ * @author  Piotr Pluta
+ * @version 1.0
  */
-
 @Getter
 @Setter
 @Entity

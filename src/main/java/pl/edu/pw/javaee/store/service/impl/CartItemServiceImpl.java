@@ -8,7 +8,8 @@ import pl.edu.pw.javaee.store.model.CartItem;
 import pl.edu.pw.javaee.store.service.CartItemService;
 
 /**
- * Created by chada on 11.11.2016.
+ * @author  Piotr Pluta
+ * @version 1.0
  */
 @Service
 public class CartItemServiceImpl implements CartItemService {

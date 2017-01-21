@@ -1,5 +1,8 @@
 /**
- * Created by chada on 06.11.2016.
+ * Konsument serwisu REST-owego
+ *
+ * @author  Karolina Chadaj
+ * @version 1.0
  */
 
 var orderApp = angular.module ("orderApp", []);

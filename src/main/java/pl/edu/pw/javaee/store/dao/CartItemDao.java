@@ -7,7 +7,8 @@ import pl.edu.pw.javaee.store.model.CustomerOrder;
 import java.io.IOException;
 
 /**
- * Created by chada on 11.11.2016.
+ * @author  Piotr Pluta
+ * @version 1.0
  */
 public interface CartItemDao {
     void addCartItem(CartItem cartItem);

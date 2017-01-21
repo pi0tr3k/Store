@@ -15,7 +15,8 @@ import javax.validation.Valid;
 import java.util.List;
 
 /**
- * Created by chada on 09.11.2016.
+ * @author  Piotr Pluta
+ * @version 1.0
  */
 @Controller
 public class RegisterController {

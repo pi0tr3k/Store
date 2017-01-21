@@ -10,7 +10,8 @@ import pl.edu.pw.javaee.store.service.*;
 import java.util.List;
 
 /**
- * Created by chada on 11.11.2016.
+ * @author  Karolina Chadaj
+ * @version 1.0
  */
 @Controller
 @RequestMapping("/rest/order")

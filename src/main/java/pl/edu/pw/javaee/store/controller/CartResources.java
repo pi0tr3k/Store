@@ -18,7 +18,8 @@ import pl.edu.pw.javaee.store.service.ProductService;
 import java.util.List;
 
 /**
- * Created by chada on 11.11.2016.
+ * @author  Piotr Pluta
+ * @version 1.0
  */
 @Controller
 @RequestMapping("/rest/cart")

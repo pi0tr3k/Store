@@ -7,7 +7,8 @@ import pl.edu.pw.javaee.store.model.Cart;
 import pl.edu.pw.javaee.store.service.CartService;
 
 /**
- * Created by chada on 11.11.2016.
+ * @author  Piotr Pluta
+ * @version 1.0
  */
 @Service
 public class CartServiceImpl implements CartService{

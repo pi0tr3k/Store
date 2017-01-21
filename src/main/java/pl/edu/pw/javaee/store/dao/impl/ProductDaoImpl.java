@@ -12,21 +12,41 @@ import pl.edu.pw.javaee.store.model.Product;
 import java.util.List;
 
 /**
- * Created by Kara on 2016-10-29.
+ * Klasa implementująca intefejs ProductDao, pełniąca funkcję repozytorium bazodanowego.
+ *
+ * @author  Piotr Pluta
+ * @version 1.0
  */
 @Repository
 @Transactional
 public class ProductDaoImpl implements ProductDao {
 
+    /**
+     * Automatycznie wstrzyknięty obiekt sessionFactory.
+     * Jego definicja znajduje się w pliku applicationContext.xml
+     */
     @Autowired
     private SessionFactory sessionFactory;
 
+    /**
+     * Metoda dodaje produkt do bazy danych.
+     * session.flush() jest odpowiednikiem Commit'a w bazie danych - dopiero po wykonaniu tej linijki kodu
+     * zmiany z poziomu Javy zostaną przeniesione do świata bazodanowego
+     *
+     * @param product
+     */
     public void addProduct(Product product){
         Session session = sessionFactory.getCurrentSession();
         session.saveOrUpdate(product);
         session.flush();
     }
 
+    /**
+     * Metoda przyjmuje jako parametr id produktu, następnie wyszukuje w sesji produkt o tym id i go zwraca.
+     *
+     * @param id
+     * @return product
+     */
     public Product getProductById (long id){
         Session session = sessionFactory.getCurrentSession();
         Product product = (Product) session.get(Product.class, id);
@@ -34,12 +54,22 @@ public class ProductDaoImpl implements ProductDao {
         return product;
     }
 
+    /**
+     * Metoda usuwająca z bazy danych rekord odpowiadający przekazanemu produktowi.
+     *
+     * @param product
+     */
     public void deleteProduct (Product product){
         Session session = sessionFactory.getCurrentSession();
         session.delete(product);
         session.flush();
     }
 
+    /**
+     * Metoda zwraca listę wszystkich produktów z bazy danych.
+     *
+     * @return product
+     */
     public List<Product> getProductList(){
         Session session = sessionFactory.getCurrentSession();
         Query query = session.createQuery("from Product");
@@ -49,6 +79,11 @@ public class ProductDaoImpl implements ProductDao {
         return products;
     }
 
+    /**
+     * Metoda zwraca listę produktów powiązanych z kategorią tenisa ziemnego
+     *
+     * @return products
+     */
     public List<Product> getTennisProducts() {
         Session session = sessionFactory.getCurrentSession();
         Query query = session.createQuery("from Product where productCategory = ?");
@@ -59,6 +94,11 @@ public class ProductDaoImpl implements ProductDao {
         return products;
     }
 
+    /**
+     * Metoda zwraca listę produktów powiązanych z kategorią tenisa stołowego.
+     *
+     * @return products
+     */
     public List<Product> getTableTennisProducts() {
         Session session = sessionFactory.getCurrentSession();
         Query query = session.createQuery("from Product where productCategory = ?");
@@ -69,6 +109,11 @@ public class ProductDaoImpl implements ProductDao {
         return products;
     }
 
+    /**
+     * Metoda zwraca listę produktów powiązanych z kategorią "Ubrania i akcesoria"
+     *
+     * @return products
+     */
     public List<Product> getClothesProducts() {
         Session session = sessionFactory.getCurrentSession();
         Query query = session.createQuery("from Product where productCategory = ?");
@@ -79,6 +124,11 @@ public class ProductDaoImpl implements ProductDao {
         return products;
     }
 
+    /**
+     * Metoda pozwala edytować istniejący produkt produktem podanym w argumencie.
+     *
+     * @param product
+     */
     public void editProduct(Product product){
         Session session = sessionFactory.getCurrentSession();
         session.saveOrUpdate(product);
